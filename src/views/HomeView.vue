@@ -1,6 +1,6 @@
 <template>
-  <header class="relative w-full h-screen">
-    <img :src="mainImage" alt="Hauptbild" class="object-cover w-full h-full"/>
+  <header id="home" class="relative w-full h-screen">
+    <img :src="mainImage" alt="Hauptbild" class="object-cover w-full h-full" />
     <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#09172d]"></div>
     <div class="absolute inset-0 flex justify-center items-center p-4">
       <div class="flex flex-col md:flex-row items-center md:items-start w-full max-w-4xl md:space-x-8 space-y-6 md:space-y-0">
@@ -18,12 +18,21 @@
             Welcome to Grinders Paradise
           </h2>
           <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 w-full sm:w-auto justify-center md:justify-start">
-            <button class="px-4 py-2 bg-[#ff7361] text-white rounded-lg text-base">
-              Get Started
-            </button>
-            <button class="px-4 py-2 bg-[#09172d] text-white rounded-lg text-base">
-              Join Us - Discord
-            </button>
+            <a href="#who-we-are" class="w-full sm:w-auto">
+              <button class="w-full sm:w-auto px-4 py-2 bg-[#ff7361] text-white rounded-lg text-base cursor-pointer">
+                Get Started
+              </button>
+            </a>
+            <a
+              href="https://discord.gg/ImMcGrinder"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full sm:w-auto"
+            >
+              <button class="w-full sm:w-auto px-4 py-2 bg-[#09172d] text-white rounded-lg text-base cursor-pointer">
+                Join Us – Discord
+              </button>
+            </a>
           </div>
         </div>
       </div>

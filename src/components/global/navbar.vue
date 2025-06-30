@@ -7,9 +7,9 @@
           <span class="text-white text-lg font-semibold">ImMcGrinderr</span>
         </div>
         <div class="hidden md:flex space-x-8 absolute left-1/2 transform -translate-x-1/2">
-          <a href="#" class="text-white hover:text-gray-300">Home</a>
-          <a href="#" class="text-white hover:text-gray-300">Who We Are</a>
-          <a href="#" class="text-white hover:text-gray-300">Discord</a>
+          <router-link to="/home" class="text-white hover:text-gray-300">Home</router-link>
+          <router-link to="/who-we-are" class="text-white hover:text-gray-300">Who We Are</router-link>
+          <a href="https://discord.gg/ImMcGrinder" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300">Discord</a>
         </div>
         <div class="ml-auto md:hidden">
           <button @click="toggleMenu" class="text-white focus:outline-none p-2">
@@ -30,15 +30,9 @@
         </svg>
       </button>
       <nav class="mt-4 flex flex-col space-y-3">
-        <a href="#" class="flex items-center px-4 py-3 rounded-lg text-white text-lg font-medium hover:bg-[#ff7361]/20 transition">
-          <span>Home</span>
-        </a>
-        <a href="#" class="flex items-center px-4 py-3 rounded-lg text-white text-lg font-medium hover:bg-[#ff7361]/20 transition">
-          <span>Who We Are</span>
-        </a>
-        <a href="#" class="flex items-center px-4 py-3 rounded-lg text-white text-lg font-medium hover:bg-[#ff7361]/20 transition">
-          <span>Discord</span>
-        </a>
+        <router-link to="/home" class="flex items-center px-4 py-3 rounded-lg text-white text-lg font-medium hover:bg-[#ff7361]/20 transition">Home</router-link>
+        <router-link to="/who-we-are" class="flex items-center px-4 py-3 rounded-lg text-white text-lg font-medium hover:bg-[#ff7361]/20 transition">Who We Are</router-link>
+        <a href="https://discord.gg/ImMcGrinder" target="_blank" rel="noopener noreferrer" class="flex items-center px-4 py-3 rounded-lg text-white text-lg font-medium hover:bg-[#ff7361]/20 transition">Discord</a>
       </nav>
     </div>
   </nav>
@@ -58,13 +52,25 @@ let menuTimeline
 const toggleMenu = () => open.value = !open.value
 
 onMounted(() => {
-  ScrollTrigger.create({ trigger: document.body, start: 'top top',
-    onEnter: () => gsap.to(navbar.value, { backgroundImage: 'linear-gradient(to bottom, rgba(9,23,45,1) 0%, rgba(9,23,45,0) 100%)', duration: 0.3 }),
-    onLeaveBack: () => gsap.to(navbar.value, { backgroundImage: 'none', backgroundColor: 'transparent', duration: 0.3 })
+  ScrollTrigger.create({
+    trigger: document.body,
+    start: 'top top',
+    onEnter: () =>
+      gsap.to(navbar.value, {
+        backgroundImage: 'linear-gradient(to bottom, rgba(9,23,45,1) 0%, rgba(9,23,45,0) 100%)',
+        duration: 0.3,
+      }),
+    onLeaveBack: () =>
+      gsap.to(navbar.value, { backgroundImage: 'none', backgroundColor: 'transparent', duration: 0.3 }),
   })
-  menuTimeline = gsap.timeline({ paused: true })
-    .to(mobileMenu.value, { x: 0, duration: 0.4, ease: 'power3.out' })
-  watch(open, val => val ? menuTimeline.play() : menuTimeline.reverse())
+
+  menuTimeline = gsap.timeline({ paused: true }).to(mobileMenu.value, {
+    x: 0,
+    duration: 0.4,
+    ease: 'power3.out',
+  })
+
+  watch(open, (val) => (val ? menuTimeline.play() : menuTimeline.reverse()))
 })
 </script>
 

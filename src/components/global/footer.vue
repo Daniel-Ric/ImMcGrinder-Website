@@ -41,7 +41,8 @@
       </div>
 
       <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-500 text-sm">
-        &copy; 2025 ImMcGrinder. All rights reserved.
+        <p>&copy; 2025 ImMcGrinder. All rights reserved.</p>
+        <p class="mt-2">Developed with ❤️ by SpindexGFX</p>
       </div>
     </div>
   </footer>

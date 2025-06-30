@@ -17,17 +17,29 @@
           <div>
             <h3 class="text-lg font-semibold mb-3 text-[#ff7361]">Quick Links</h3>
             <ul class="space-y-2">
-              <li><a href="#" class="hover:text-[#ff7361] transition">Home</a></li>
-              <li><a href="#" class="hover:text-[#ff7361] transition">Who We Are</a></li>
-              <li><a href="#" class="hover:text-[#ff7361] transition">Discord</a></li>
+              <li>
+                <router-link to="/home" class="hover:text-[#ff7361] transition">Home</router-link>
+              </li>
+              <li>
+                <router-link to="/who-we-are" class="hover:text-[#ff7361] transition">Who We Are</router-link>
+              </li>
+              <li>
+                <a href="https://discord.gg/ImMcGrinder" target="_blank" rel="noopener noreferrer" class="hover:text-[#ff7361] transition">Discord</a>
+              </li>
             </ul>
           </div>
           <div>
             <h3 class="text-lg font-semibold mb-3 text-[#ff7361]">Community</h3>
             <ul class="space-y-2">
-              <li><a href="#" class="hover:text-[#ff7361] transition">Giveaways</a></li>
-              <li><a href="#" class="hover:text-[#ff7361] transition">Events</a></li>
-              <li><a href="#" class="hover:text-[#ff7361] transition">Support</a></li>
+              <li>
+                <a href="https://discord.com/channels/1170347889768267806/1170450885713866963" target="_blank" rel="noopener noreferrer" class="hover:text-[#ff7361] transition">Giveaways</a>
+              </li>
+              <li>
+                <a href="https://discord.com/channels/1170347889768267806/1170732257040945276" target="_blank" rel="noopener noreferrer" class="hover:text-[#ff7361] transition">Events</a>
+              </li>
+              <li>
+                <a href="https://discord.com/channels/1170347889768267806/1189322862004293712" target="_blank" rel="noopener noreferrer" class="hover:text-[#ff7361] transition">Support</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -35,7 +47,9 @@
         <div class="lg:w-1/3">
           <h3 class="text-lg font-semibold mb-3 text-[#ff7361]">Connect</h3>
           <div class="flex space-x-4">
-            <FontAwesomeIcon :icon="faDiscord" class="text-2xl hover:text-[#ff7361] transition" />
+            <a href="https://discord.gg/ImMcGrinder" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon :icon="faDiscord" class="text-2xl hover:text-[#ff7361] transition" />
+            </a>
           </div>
         </div>
       </div>
